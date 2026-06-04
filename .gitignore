@@ -8,17 +8,15 @@
 
 # Quarto
 .quarto/
+_site/
 
 # Sistema
 .DS_Store
 Thumbs.db
 
-# Arquivos temporários
-*.tmp
-*.bak
-
-# PDFs gerados
-*_files/
-
 # Logs
 *.log
+
+# Temporários
+*.tmp
+*.bak

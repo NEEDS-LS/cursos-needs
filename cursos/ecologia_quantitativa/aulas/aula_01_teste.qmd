@@ -1,0 +1,113 @@
+---
+title: "Aula 01 - Teste da infraestrutura"
+subtitle: "Ecologia Quantitativa | NEEDS/UFSCar"
+author: "NEEDS"
+format:
+  html:
+    toc: true
+    css: ../../../assets/css/needs.css
+resources:
+  - ../../../assets/logos/horizontal/NEEDS_horizontal.png
+execute:
+  echo: true
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal.png){.needs-logo}
+
+# Objetivos
+
+Verificar se:
+
+- o Quarto está funcionando;
+- o CSS está sendo carregado;
+- o logo está aparecendo;
+- os callouts estão funcionando;
+- os chunks de R estão executando.
+
+::: callout-note
+## Teste de callout
+
+Se esta caixa aparecer formatada, o CSS está funcionando.
+:::
+
+# Teste de texto
+
+Este é um parágrafo normal.
+
+## Subtítulo de teste
+
+Este é outro parágrafo.
+
+# Teste de código
+
+```{r}
+summary(cars)
+```
+
+# Teste de gráfico
+
+```{r}
+plot(cars)
+```
+
+::::: callout-important
+## Desafio
+
+Se você consegue ver esta caixa destacada, a estrutura básica está funcionando.
+
+---
+title: "Aula 01 - Teste da infraestrutura"
+subtitle: "Ecologia Quantitativa | NEEDS/UFSCar"
+author: "NEEDS"
+format:
+  html:
+    toc: true
+    css: ../../../assets/css/needs.css
+execute:
+  echo: true
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal.png){.needs-logo}
+
+# Objetivos
+
+Verificar se:
+
+- o Quarto está funcionando;
+- o CSS está sendo carregado;
+- o logo está aparecendo;
+- os callouts estão funcionando;
+- os chunks de R estão executando.
+
+::: callout-note
+## Teste de callout
+
+Se esta caixa aparecer formatada, o CSS está funcionando.
+:::
+
+# Teste de texto
+
+Este é um parágrafo normal.
+
+## Subtítulo de teste
+
+Este é outro parágrafo.
+
+# Teste de código
+
+```{r}
+summary(cars)
+```
+
+# Teste de gráfico
+
+```{r}
+plot(cars)
+```
+
+::: callout-important
+## Desafio
+
+Se você consegue ver esta caixa destacada, a estrutura básica está funcionando.
+:::
+:::::
