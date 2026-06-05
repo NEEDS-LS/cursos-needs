@@ -1,6 +1,6 @@
----
+------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
 ---
 title: "Título da aula"
@@ -22,7 +22,7 @@ execute:
   message: false
 ---
 
-![](../assets/logos/horizontal/NEEDS_horizontal.png){.needs-logo}
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
 
 # Objetivos da aula
 

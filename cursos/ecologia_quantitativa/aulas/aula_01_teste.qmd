@@ -1,113 +1,91 @@
 ---
-title: "Aula 01 - Teste da infraestrutura"
+title: "Aula 01 - Teste da identidade visual"
 subtitle: "Ecologia Quantitativa | NEEDS/UFSCar"
-author: "NEEDS"
-format:
-  html:
-    toc: true
-    css: ../../../assets/css/needs.css
-resources:
-  - ../../../assets/logos/horizontal/NEEDS_horizontal.png
-execute:
-  echo: true
----
-
-![](../../../assets/logos/horizontal/NEEDS_horizontal.png){.needs-logo}
-
-# Objetivos
-
-Verificar se:
-
-- o Quarto está funcionando;
-- o CSS está sendo carregado;
-- o logo está aparecendo;
-- os callouts estão funcionando;
-- os chunks de R estão executando.
-
-::: callout-note
-## Teste de callout
-
-Se esta caixa aparecer formatada, o CSS está funcionando.
-:::
-
-# Teste de texto
-
-Este é um parágrafo normal.
-
-## Subtítulo de teste
-
-Este é outro parágrafo.
-
-# Teste de código
-
-```{r}
-summary(cars)
-```
-
-# Teste de gráfico
-
-```{r}
-plot(cars)
-```
-
-::::: callout-important
-## Desafio
-
-Se você consegue ver esta caixa destacada, a estrutura básica está funcionando.
-
----
-title: "Aula 01 - Teste da infraestrutura"
-subtitle: "Ecologia Quantitativa | NEEDS/UFSCar"
-author: "NEEDS"
+author: "NEEDS/UFSCar"
+lang: pt-BR
 format:
   html:
     toc: true
     css: ../../../assets/css/needs.css
 execute:
   echo: true
+  warning: false
+  message: false
 ---
 
-![](../../../assets/logos/horizontal/NEEDS_horizontal.png){.needs-logo}
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
 
-# Objetivos
+# Teste da identidade visual NEEDS
 
-Verificar se:
+Este documento testa os principais elementos visuais dos materiais didáticos do NEEDS.
 
-- o Quarto está funcionando;
-- o CSS está sendo carregado;
-- o logo está aparecendo;
-- os callouts estão funcionando;
-- os chunks de R estão executando.
+::: {.needs-box .objetivos}
+## Objetivos
 
-::: callout-note
-## Teste de callout
+Ao final desta aula, você deverá ser capaz de:
 
-Se esta caixa aparecer formatada, o CSS está funcionando.
+- reconhecer a estrutura visual dos materiais;
+- identificar os blocos institucionais;
+- verificar se o Quarto está renderizando corretamente.
 :::
 
-# Teste de texto
+::: {.needs-box .conceitos}
+## Conceitos-chave
 
-Este é um parágrafo normal.
+- Quarto
+- CSS
+- Identidade visual
+- Material didático reproduzível
+:::
 
-## Subtítulo de teste
+## Contextualização
 
-Este é outro parágrafo.
+Os materiais didáticos do NEEDS serão organizados em uma estrutura comum, aplicada aos cursos de Ecologia Quantitativa, Ecologia de Paisagens, Planejamento e Zoneamento Ambiental e Monitoramento da Biodiversidade.
 
-# Teste de código
+::: {.needs-box .conservacao}
+## Conexão com a conservação
+
+A padronização dos materiais facilita a formação de estudantes e profissionais que irão atuar com conservação, restauração, planejamento ambiental e monitoramento da biodiversidade.
+:::
+
+::: {.needs-box .atividade}
+## Atividade prática
+
+Este bloco será usado para descrever atividades práticas, coletas simuladas, exercícios em campo ou etapas de organização de dados.
+:::
+
+## Teste de código em R
 
 ```{r}
 summary(cars)
 ```
 
-# Teste de gráfico
+## Teste de gráfico
 
 ```{r}
 plot(cars)
 ```
 
-::: callout-important
+::: {.needs-box .exercicios}
+## Exercícios
+
+1.  Verifique se o logo aparece corretamente.
+2.  Verifique se os títulos estão em verde.
+3.  Verifique se os blocos possuem cores diferentes.
+:::
+
+::: {.needs-box .desafio}
 ## Desafio
 
-Se você consegue ver esta caixa destacada, a estrutura básica está funcionando.
+Teste este mesmo template em outro arquivo `.qmd` dentro de uma pasta de curso.
 :::
-:::::
+
+::: {.needs-box .sintese}
+## Síntese
+
+A identidade visual NEEDS deve ser simples, limpa e reconhecível, mantendo consistência entre todos os cursos e tutoriais.
+:::
+
+::: needs-footer
+NEEDS/UFSCar — Material didático em desenvolvimento.
+:::

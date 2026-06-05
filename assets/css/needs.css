@@ -11,31 +11,45 @@
   --needs-green-pale: #BAC263;
   --needs-yellow-pale: #D9D97C;
   --needs-yellow: #CEC800;
-  --needs-gray-light: #f7f7f4;
+  --needs-bg: #fbfbf7;
   --needs-gray: #555555;
 }
 
-/* Fonte geral */
+/* Base */
 body {
   font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
-  color: #222222;
+  color: #222;
+  background-color: #ffffff;
+  line-height: 1.65;
+}
+
+/* Logo */
+.needs-logo {
+  max-width: 140px;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 /* Títulos */
-h1, h2, h3, h4 {
-  color: var(--needs-green-dark);
-  font-weight: 700;
-}
-
 h1 {
-  border-bottom: 4px solid var(--needs-green-light);
+  color: var(--needs-green-dark);
+  font-weight: 800;
+  border-bottom: 5px solid var(--needs-green-light);
   padding-bottom: 0.25em;
 }
 
 h2 {
+  color: var(--needs-green-dark);
+  font-weight: 700;
   border-left: 6px solid var(--needs-green-medium);
-  padding-left: 0.5em;
-  margin-top: 1.5em;
+  padding-left: 0.6em;
+  margin-top: 2em;
+}
+
+h3, h4 {
+  color: var(--needs-green-forest);
+  font-weight: 700;
 }
 
 /* Links */
@@ -52,52 +66,68 @@ code {
   color: var(--needs-green-dark);
 }
 
-pre code {
-  font-size: 0.92em;
+pre {
+  border-left: 4px solid var(--needs-green-light);
 }
 
 /* Tabelas */
-table {
-  font-size: 0.95em;
-}
-
 thead {
   background-color: var(--needs-green-dark);
   color: white;
 }
 
-/* Callouts */
-.callout {
-  border-radius: 8px;
+/* Blocos institucionais */
+.needs-box {
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin: 1.3rem 0;
+  background-color: var(--needs-bg);
+  border-left: 8px solid var(--needs-green-medium);
 }
 
-.callout-note {
-  border-left-color: var(--needs-green-medium);
+.needs-box h2,
+.needs-box h3 {
+  margin-top: 0;
+  border-left: none;
+  padding-left: 0;
 }
 
-.callout-tip {
+.objetivos {
   border-left-color: var(--needs-green-light);
 }
 
-.callout-important {
+.conceitos {
+  border-left-color: var(--needs-green-dark);
+}
+
+.conservacao {
+  border-left-color: var(--needs-green-medium);
+}
+
+.atividade {
+  border-left-color: var(--needs-green-pale);
+}
+
+.exercicios {
   border-left-color: var(--needs-yellow);
+  background-color: #fffdf0;
 }
 
-.callout-warning {
+.desafio {
   border-left-color: var(--needs-yellow);
+  background-color: #fff9d6;
 }
 
-/* Logo em capa ou cabeçalho */
-.needs-logo {
-  max-width: 220px;
-  margin-bottom: 1em;
+.sintese {
+  border-left-color: var(--needs-green-forest);
+  background-color: #f4f8ef;
 }
 
-/* Rodapé simples */
+/* Rodapé */
 .needs-footer {
   font-size: 0.85em;
   color: var(--needs-gray);
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ddd;
   margin-top: 3em;
   padding-top: 1em;
 }

@@ -20,3 +20,15 @@ Thumbs.db
 # Temporários
 *.tmp
 *.bak
+/.quarto/
+**/*.quarto_ipynb
+
+# Quarto outputs
+_site/
+.quarto/
+
+# HTML gerado
+*.html
+
+# Bibliotecas geradas
+*_files/
