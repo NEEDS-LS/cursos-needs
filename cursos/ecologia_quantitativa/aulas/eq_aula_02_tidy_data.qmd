@@ -1,0 +1,134 @@
+---
+title: "Título da aula"
+subtitle: "Curso | NEEDS/UFSCar"
+author: "NEEDS – Núcleo de Estudos em Ecologia Espacial e Desenvolvimento Sustentável"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    css: ../../../assets/css/needs.css
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
+
+# Resumo
+
+Nesta aula iremos integrar os dados coletados pelos diferentes grupos durante a atividade de amostragem da Aula 01. Veremos que diferenças na identificação dos organismos, na nomenclatura utilizada e na estrutura das tabelas dificultam a consolidação dos dados em um único banco de dados. Para resolver esses problemas, introduziremos os princípios de Tidy Data, uma abordagem amplamente utilizada para organização de dados científicos e que constitui a base do ecossistema tidyverse do R.
+
+# Objetivos da aula
+
+Ao final desta aula, você deverá ser capaz de:
+
+- reconhecer problemas de padronização em bancos de dados ecológicos;
+
+- compreender os princípios de organização de dados propostos pelo Hadley Wickham;
+
+- distinguir tabelas em formato wide e long;
+
+- transformar tabelas em um formato compatível com análises ecológicas;
+
+- integrar dados coletados por diferentes observadores em um único banco de dados.
+
+## Conceitos-chave
+
+- Banco de dados
+
+- Padronização de dados
+
+- Variável
+
+- Observação
+
+- Unidade amostral
+
+- Tidy Data
+
+- Formato long
+
+- Formato wide
+
+- Metadados.
+
+# Contextualização
+
+Na aula anterior, cada grupo coletou uma amostra da comunidade de balas e registrou seus dados da forma que considerou mais adequada. Embora essa liberdade permita diferentes estratégias de organização, ela também gera dificuldades quando tentamos integrar as informações produzidas por múltiplos observadores.
+
+Situações semelhantes são comuns em projetos de monitoramento da biodiversidade. Pesquisadores diferentes podem utilizar nomenclaturas distintas para as espécies, registrar informações em formatos incompatíveis ou armazenar dados em planilhas estruturadas de maneiras diferentes. Antes que qualquer análise ecológica possa ser realizada, é necessário organizar e padronizar essas informações.
+
+Nesta aula utilizaremos os dados produzidos pela própria turma para discutir como construir bancos de dados consistentes e preparados para análises futuras.
+
+# Conexão com a Conservação
+
+Programas de monitoramento ambiental frequentemente envolvem equipes numerosas, campanhas realizadas em diferentes períodos e múltiplas fontes de informação. A capacidade de integrar esses dados de forma consistente é fundamental para responder perguntas sobre biodiversidade, restauração ecológica e mudanças ambientais. Dados mal organizados podem comprometer análises, dificultar a reprodutibilidade e reduzir o valor científico das informações coletadas.
+
+## Os princípios do Tidy Data
+
+Em um artigo publicado em 2014, Hadley Wickham propôs uma forma padronizada de organizar dados conhecida como Tidy Data. A ideia central é simples: organizar os dados de forma que sua estrutura reflita claramente as observações realizadas e as variáveis registradas.
+
+Segundo o Hadley, um conjunto de dados é considerado "tidy" quando atende a três princípios fundamentais:
+
+1.  Cada variável ocupa uma coluna.
+
+2.  Cada observação ocupa uma linha.
+
+3.  Cada tipo de unidade observacional ocupa uma tabela.
+
+Esses princípios facilitam a integração de dados, reduzem erros durante as análises e tornam os bancos de dados mais fáceis de serem compreendidos e compartilhados.
+
+Ao longo desta aula iremos avaliar se os dados produzidos pela turma atendem a esses princípios e aprenderemos como reorganizá-los quando isso não ocorrer.
+
+# Atividade prática
+
+Descrição da atividade.
+
+::: callout-tip
+## Antes de começar
+
+Verifique se você tem os pacotes necessários instalados.
+:::
+
+# Preparando o ambiente no R
+
+```{r} library(tidyverse)}
+```
+
+# Importando os dados
+
+```{r} # dados <- read_csv("caminho/para/os/dados.csv")}
+```
+
+# Organização dos dados
+
+```{r} # exemplo de manipulação}
+```
+
+# Visualização
+
+```{r} # exemplo de gráfico}
+```
+
+# Exercícios
+
+1.  Questão 1.
+2.  Questão 2.
+3.  Questão 3.
+
+::: callout-important
+## Desafio
+
+Inclua aqui uma tarefa extra para os alunos.
+:::
+
+# Síntese
+
+A utilidade de um conjunto de dados depende não apenas da informação coletada, mas também da forma como essa informação é organizada e mantida. Dados padronizados permitem integrar observações, reproduzir análises e extrair conhecimento de forma mais eficiente. E isso é fundamental tanto para a reutilização dos dados, quanto para você quando voltar nos teus próprios dados daqui a 6 meses.
+
+::: needs-footer
+NEEDS/UFSCar — Material didático em desenvolvimento.
+:::

@@ -1,0 +1,136 @@
+---
+title: "Aula 01 - Amostragem, Observação e Construção de Dados Ecológicos"
+subtitle: "Ecologia Quantitativa | NEEDS/UFSCar"
+author: "NEEDS – Núcleo de Estudos em Ecologia Espacial e Desenvolvimento Sustentável"
+course: "Ecologia Quantitativa"
+lesson: "EQ01"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    css: ../../../assets/css/needs.css
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo fig-align="right"}
+
+# Resumo
+
+Nesta aula iremos simular o processo de amostragem de uma comunidade biológica utilizando diferentes tipos de balas como organismos. Vocês serão responsáveis por coletar, identificar e registrar os dados da forma que julgarem mais adequada. A atividade tem como objetivo evidenciar que dados ecológicos não surgem prontos para análise, mas são construídos a partir de decisões tomadas durante a observação, identificação e organização das informações.
+
+# Objetivos da aula
+
+Ao final desta aula, você deverá ser capaz de:
+
+- compreender o conceito de unidade amostral;
+
+<!-- -->
+
+- reconhecer a influência do esforço amostral sobre os resultados obtidos;
+
+- identificar problemas de padronização na coleta e registro de dados;
+
+- compreender que dados ecológicos são construídos antes de serem analisados;
+
+- reconhecer a importância de protocolos padronizados de amostragem e identificação.
+
+::: callout-note
+## Ideia central e Conceitos-chave
+
+Como se trabalha com dados biológicos
+
+- Comunidade biológica
+
+- Unidade amostral
+
+- Esforço amostral
+
+- Observação
+
+- Identificação
+
+- Registro de dados
+
+- Padronização
+
+- Banco de dados
+:::
+
+# Conexão com a Conservação
+
+Levantamentos e monitoramentos de biodiversidade dependem da coleta padronizada de informações biológicas. Antes de qualquer análise estatística, os pesquisadores precisam identificar organismos, registrar observações e organizar bancos de dados consistentes. Erros nessa etapa podem comprometer todas as análises subsequentes.
+
+# Atividade prática
+
+::: callout-note
+## Parte 1 - Caracterização de uma comunidade biológica
+
+Nesta atividade iremos simular a amostragem de uma comunidade biológica utilizando diferentes tipos de balas como organismos.
+
+A turma será dividida em grupos. Cada grupo será responsável por coletar uma amostra da comunidade, identificar os organismos encontrados e registrar os dados obtidos.
+
+O objetivo da atividade é caracterizar a composição da comunidade presente na área amostrada.
+
+Preparando o ambiente no R
+:::
+
+::: callout-tip
+## Procedimentos
+
+- Cada grupo deverá coletar uma amostra da comunidade de balas disponível.
+
+- Após a coleta, os integrantes do grupo deverão separar os organismos encontrados em categorias (espécies) que considerem adequadas.
+
+- Cada grupo deverá registrar os dados coletados da forma que julgar mais apropriada.
+
+- Os dados deverão ser entregues através do Google Classroom ao final da atividade no formato de planilha.
+:::
+
+::: callout-tip
+## Importante
+
+Nesta etapa não será fornecido nenhum protocolo de identificação ou modelo de planilha.
+
+Cada grupo deverá decidir:
+
+- como identificar os organismos;
+
+- quais informações registrar;
+
+- como organizar os dados;
+
+- qual formato utilizar para apresentar os resultados.
+:::
+
+# Questões para reflexão
+
+::: callout-important
+## Importante
+
+Ao final da atividade, discuta com seu grupo:
+
+- Todos os indivíduos encontrados foram facilmente identificados?
+
+- Houve dúvidas sobre como classificar alguns organismos?
+
+- O grupo teve dificuldades para decidir como registrar os dados?
+
+- Como os dados foram organizados?
+
+- Outra equipe conseguiria compreender e utilizar os dados produzidos por seu grupo?
+
+  Essas questões deverão ser respondidas em um Google Docs e entregues uma por grupo.
+:::
+
+# Síntese
+
+Dados ecológicos não são simplesmente coletados: eles são construídos a partir de decisões tomadas durante a observação, identificação e registro das informações.
+
+::: needs-footer
+NEEDS/UFSCar — Material didático em constante desenvolvimento.
+:::
