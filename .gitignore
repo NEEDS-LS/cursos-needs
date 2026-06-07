@@ -32,3 +32,10 @@ _site/
 
 # Bibliotecas geradas
 *_files/
+
+# LaTeX
+*.tex
+*.aux
+*.log
+*.out
+*.toc
