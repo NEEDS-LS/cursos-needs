@@ -1,0 +1,120 @@
+---
+title: "Aula 03 – Esforço Amostral e Curvas de Acumulação de Espécies"
+subtitle: "Curso | NEEDS/UFSCar"
+author: "NEEDS – Núcleo de Estudos em Ecologia Espacial e Desenvolvimento Sustentável"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    css: ../../../assets/css/needs.css
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
+
+# Resumo
+
+Nesta aula utilizaremos os dados produzidos por vocês para investigar como o esforço amostral influencia o número de espécies observadas. Veremos que comunidades mais intensamente amostradas tendem a apresentar maior riqueza observada, mesmo quando pertencem ao um ambiente com um mesmo número de espécies. Para compreender essa relação, construiremos curvas de acumulação de espécies e discutiremos como elas podem ser utilizadas para avaliar a suficiência amostral de inventários biológicos.
+
+# Objetivos da aula
+
+Ao final desta aula, você deverá ser capaz de:
+
+- compreender a relação entre esforço amostral e riqueza observada;
+
+- interpretar curvas de acumulação de espécies;
+
+- avaliar a suficiência amostral de um inventário biológico;
+
+- identificar o papel das espécies raras na construção das curvas;
+
+- compreender as limitações da riqueza observada como estimativa da riqueza real.
+
+::: callout-note
+## Conceitos-chave
+
+- Riqueza de espécies
+
+- Esforço amostral
+
+- Curva de acumulação de espécies
+
+- Curva do coletor
+
+- Suficiência amostral
+
+- Espécies raras
+
+- Ordem de amostragem
+
+- Incerteza
+:::
+
+# Contextualização
+
+Em inventários biológicos raramente observamos todas as espécies presentes em uma comunidade. À medida que novas amostras são coletadas, novas espécies continuam sendo registradas, embora em taxas cada vez menores. Dessa forma, o número de espécies observadas depende não apenas da comunidade amostrada, mas também do esforço empregado na amostragem.
+
+As curvas de acumulação de espécies permitem visualizar essa relação e constituem uma das ferramentas mais utilizadas para avaliar a qualidade e a suficiência de inventários ecológicos.
+
+# Conexão com a Conservação
+
+Decisões relacionadas à conservação frequentemente dependem de inventários de biodiversidade. Entretanto, a riqueza observada em um levantamento pode refletir tanto a diversidade real do ambiente quanto o esforço de amostragem empregado. Avaliar se o esforço realizado foi suficiente é fundamental para interpretar corretamente os resultados e comparar diferentes áreas ou estudos.
+
+# Atividade prática
+
+Descrição da atividade.
+
+::: callout-tip
+## Antes de começar
+
+Verifique se você tem os pacotes necessários instalados.
+:::
+
+# Preparando o ambiente no R
+
+```{r}
+library(tidyverse)
+```
+
+# Importando os dados
+
+```{r}
+# dados <- read_csv("caminho/para/os/dados.csv")
+```
+
+# Organização dos dados
+
+```{r}
+# exemplo de manipulação
+```
+
+# Visualização
+
+```{r}
+# exemplo de gráfico
+```
+
+# Exercícios
+
+1.  Questão 1.
+2.  Questão 2.
+3.  Questão 3.
+
+::: callout-important
+## Desafio
+
+Inclua aqui uma tarefa extra para os alunos.
+:::
+
+# Síntese
+
+A riqueza observada depende do esforço amostral; por isso, inventários biológicos devem ser interpretados à luz da intensidade com que foram realizados.
+
+::: needs-footer
+NEEDS/UFSCar — Material didático em constante desenvolvimento.
+:::

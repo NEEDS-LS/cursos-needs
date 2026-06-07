@@ -1,5 +1,5 @@
 ---
-title: "Título da aula"
+title: "Aula 02 – Padronização de Dados e Tidy Data"
 subtitle: "Curso | NEEDS/UFSCar"
 author: "NEEDS – Núcleo de Estudos em Ecologia Espacial e Desenvolvimento Sustentável"
 date: today
@@ -95,23 +95,19 @@ Verifique se você tem os pacotes necessários instalados.
 
 # Preparando o ambiente no R
 
-```{r} library(tidyverse)}
-```
+`{r} library(tidyverse)}`
 
 # Importando os dados
 
-```{r} # dados <- read_csv("caminho/para/os/dados.csv")}
-```
+`{r} # dados <- read_csv("caminho/para/os/dados.csv")}`
 
 # Organização dos dados
 
-```{r} # exemplo de manipulação}
-```
+`{r} # exemplo de manipulação}`
 
 # Visualização
 
-```{r} # exemplo de gráfico}
-```
+`{r} # exemplo de gráfico}`
 
 # Exercícios
 

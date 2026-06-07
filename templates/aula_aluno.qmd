@@ -9,9 +9,6 @@ format:
     toc-depth: 3
     css: ../assets/css/needs.css
     embed-resources: true
-  pdf:
-    toc: true
-    number-sections: true
 execute:
   echo: true
   warning: false
@@ -30,9 +27,9 @@ Ao final desta aula, você deverá ser capaz de:
 - interpretar os resultados ecológicos.
 
 ::: callout-note
-## Ideia central
+## Conceitos-chave
 
-Escreva aqui a mensagem principal da aula.
+Escrever aqui os principaisa conceitos a serem trabalhados em aula.
 :::
 
 # Contextualização
@@ -90,5 +87,5 @@ Inclua aqui uma tarefa extra para os alunos.
 Retome os principais aprendizados da aula.
 
 ::: needs-footer
-NEEDS/UFSCar — Material didático em desenvolvimento.
+NEEDS/UFSCar — Material didático em constante desenvolvimento.
 :::
