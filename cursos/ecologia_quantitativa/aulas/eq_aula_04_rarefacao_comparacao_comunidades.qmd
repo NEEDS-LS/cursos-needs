@@ -1,0 +1,144 @@
+---
+title: "Aula 04 – Rarefação e Comparação de Comunidades"
+subtitle: "Curso | NEEDS/UFSCar"
+author: "NEEDS – Núcleo de Estudos em Ecologia Espacial e Desenvolvimento Sustentável"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    css: ../assets/css/needs.css
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
+
+# Resumo
+
+Nesta aula iremos discutir como comparar a riqueza de espécies entre comunidades ou levantamentos realizados com diferentes esforços amostrais. Veremos que diferenças na quantidade de indivíduos observados ou no número de amostras coletadas podem influenciar diretamente a riqueza registrada. Para lidar com esse problema, introduziremos o conceito de rarefação, uma técnica que permite padronizar o esforço amostral e realizar comparações mais justas entre comunidades.
+
+# Objetivos da aula
+
+Ao final desta aula, você deverá ser capaz de:
+
+- compreender por que a riqueza observada depende do esforço amostral;
+
+- reconhecer limitações de comparações baseadas apenas na riqueza observada;
+
+- compreender os princípios da rarefação;
+
+- interpretar curvas de rarefação;
+
+- comparar comunidades utilizando esforços amostrais padronizados;
+
+- avaliar as vantagens e limitações da rarefação.
+
+::: callout-note
+## Conceitos-chave
+
+Escrever aqui os principaisa conceitos a serem trabalhados em aula.
+:::
+
+# Contextualização
+
+- Riqueza observada
+
+- Esforço amostral
+
+- Rarefação
+
+- Padronização amostral
+
+- Comparação de comunidades
+
+- Curvas de rarefação
+
+- Subamostragem
+
+- Incerteza
+
+# Contextualização
+
+Na aula anterior vimos que o número de espécies observadas aumenta à medida que novas amostras são coletadas. Isso significa que duas comunidades amostradas com intensidades diferentes podem apresentar riquezas observadas distintas, mesmo quando possuem níveis semelhantes de diversidade.
+
+Esse problema é extremamente comum em estudos ecológicos. Em muitos casos, o número de indivíduos observados, o número de armadilhas instaladas ou o tempo dedicado à amostragem varia entre áreas ou campanhas de campo. Comparações diretas da riqueza observada podem, portanto, levar a interpretações equivocadas.
+
+A rarefação foi desenvolvida justamente para lidar com essa questão, permitindo comparar comunidades sob um mesmo nível de esforço amostral.
+
+# Conexão com a Conservação
+
+Comparações entre áreas protegidas, fragmentos florestais, paisagens agrícolas ou projetos de restauração frequentemente envolvem diferenças no esforço de amostragem. Métodos de padronização, como a rarefação, são fundamentais para garantir que diferenças observadas na riqueza de espécies reflitam padrões biológicos reais e não apenas diferenças metodológicas.
+
+# Atividade prática
+
+Descrição da atividade.
+
+::: callout-tip
+## Antes de começar
+
+Verifique se você tem os pacotes necessários instalados.
+:::
+
+# Preparando o ambiente no R
+
+```{r}
+library(tidyverse)
+```
+
+# Importando os dados
+
+```{r}
+# dados <- read_csv("caminho/para/os/dados.csv")
+```
+
+# Organização dos dados
+
+```{r}
+# exemplo de manipulação
+```
+
+# Visualização
+
+```{r}
+# exemplo de gráfico
+```
+
+# Exercícios
+
+1.  Questão 1.
+2.  Questão 2.
+3.  Questão 3.
+
+::: callout-important
+## Desafio
+
+Inclua aqui uma tarefa extra para os alunos.
+:::
+
+# Síntese
+
+## Por que precisamos de rarefação?
+
+Imagine duas comunidades amostradas por diferentes grupos.
+
+A comunidade A foi representada por 200 indivíduos observados e apresentou 18 espécies.
+
+A comunidade B foi representada por apenas 80 indivíduos observados e apresentou 14 espécies.
+
+Podemos concluir que a comunidade A é mais diversa (tem mais espécies)?
+
+Não necessariamente.
+
+Parte dessa diferença pode ser consequência do maior esforço amostral empregado na comunidade A.
+
+A rarefação busca responder à seguinte pergunta:
+
+> Quantas espécies esperaríamos observar se ambas as comunidades fossem amostradas com o mesmo esforço?
+
+::: needs-footer
+NEEDS/UFSCar — Material didático em constante desenvolvimento.
+:::
