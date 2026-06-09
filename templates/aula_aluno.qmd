@@ -7,7 +7,7 @@ format:
   html:
     toc: true
     toc-depth: 3
-    css: ../assets/css/needs.css
+    css: ../../../assets/css/needs.css
     embed-resources: true
 execute:
   echo: true

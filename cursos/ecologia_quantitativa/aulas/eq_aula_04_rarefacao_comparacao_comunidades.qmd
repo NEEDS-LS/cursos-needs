@@ -7,7 +7,7 @@ format:
   html:
     toc: true
     toc-depth: 3
-    css: ../assets/css/needs.css
+    css: ../../../assets/css/needs.css
     embed-resources: true
 execute:
   echo: true
@@ -40,11 +40,6 @@ Ao final desta aula, você deverá ser capaz de:
 ::: callout-note
 ## Conceitos-chave
 
-Escrever aqui os principaisa conceitos a serem trabalhados em aula.
-:::
-
-# Contextualização
-
 - Riqueza observada
 
 - Esforço amostral
@@ -60,6 +55,9 @@ Escrever aqui os principaisa conceitos a serem trabalhados em aula.
 - Subamostragem
 
 - Incerteza
+
+# 
+:::
 
 # Contextualização
 
@@ -138,6 +136,14 @@ Parte dessa diferença pode ser consequência do maior esforço amostral emprega
 A rarefação busca responder à seguinte pergunta:
 
 > Quantas espécies esperaríamos observar se ambas as comunidades fossem amostradas com o mesmo esforço?
+
+Sendo assim, a rarefação permite comparar comunidades utilizando o mesmo esforço amostral. Entretanto, ela não responde a uma questão igualmente importante:
+
+> Quantas espécies ainda não observamos?
+
+Na próxima aula veremos como estimadores de riqueza podem ser utilizados para inferir o número de espécies não detectadas durante a amostragem.
+
+Síntese da aula de hoje: **Comparações ecológicas só são justas quando levam em consideração diferenças no esforço amostral empregado em cada levantamento.**
 
 ::: needs-footer
 NEEDS/UFSCar — Material didático em constante desenvolvimento.
