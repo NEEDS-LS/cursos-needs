@@ -1,0 +1,164 @@
+---
+title: "Aula 05 – Estimadores de Riqueza e Espécies Não Observadas"
+subtitle: "Curso | NEEDS/UFSCar"
+author: "NEEDS – Núcleo de Estudos em Ecologia Espacial e Desenvolvimento Sustentável"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    css: ../../../assets/css/needs.css
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
+
+# Resumo
+
+Nesta aula iremos explorar métodos utilizados para estimar a riqueza total de espécies presentes em uma comunidade. Veremos que a **riqueza observada** durante uma amostragem representa apenas uma fração da **riqueza real** e que espécies raras desempenham um papel fundamental na estimativa das espécies ainda não detectadas (especialmente nos trópicos!). Serão apresentados alguns dos principais estimadores de riqueza utilizados em Ecologia, com destaque para os métodos de Chao e Jackknife.
+
+# Objetivos da aula
+
+Ao final desta aula, você deverá ser capaz de:
+
+- compreender a diferença entre riqueza observada e riqueza estimada;
+
+- interpretar o significado ecológico de espécies raras;
+
+- compreender como estimadores de riqueza inferem espécies não observadas;
+
+- interpretar estimativas produzidas por diferentes métodos;
+
+- reconhecer as limitações e incertezas associadas aos estimadores de riqueza.
+
+::: callout-note
+## Conceitos-chave
+
+- Riqueza observada
+
+<!-- -->
+
+- Riqueza estimada
+
+- Espécies raras
+
+- Singletons
+
+- Doubletons
+
+- Espécies não detectadas
+
+- Chao1
+
+- Jackknife
+
+- Extrapolação
+
+- Incerteza
+:::
+
+# Contextualização
+
+Mesmo após um esforço amostral considerável, raramente registramos todas as espécies presentes em uma comunidade. Algumas espécies são naturalmente raras, enquanto outras podem apresentar baixa detectabilidade ou distribuição espacial restrita. Como consequência, a riqueza observada tende a subestimar a riqueza real.
+
+Estimadores de riqueza foram desenvolvidos para lidar com esse problema. Utilizando informações contidas na própria amostra, especialmente a frequência de espécies raras. Esses métodos permitem inferir quantas espécies provavelmente permanecem não detectadas.
+
+## Como estimar espécies que não observamos?
+
+Imagine que uma amostragem tenha produzido o seguinte resultado:
+
+- 15 espécies observadas;
+
+- 4 espécies registradas apenas uma vez;
+
+- 2 espécies registradas apenas duas vezes.
+
+Essas espécies raras sugerem que a amostragem ainda não foi suficiente para registrar toda a biodiversidade presente.
+
+A lógica dos estimadores de riqueza é simples:
+
+> Quanto maior o número de espécies raras observadas, maior a probabilidade de ainda existirem espécies não detectadas.
+
+Dessa forma, a frequência de espécies raras fornece informações valiosas sobre a parcela invisível da comunidade.
+
+## O estimador de Chao
+
+O estimador de Chao é um dos métodos mais utilizados para inferir riqueza de espécies. Sua lógica baseia-se na frequência de espécies observadas apenas uma vez (singletons) e duas vezes (doubletons).
+
+Quando a amostra contém muitas espécies registradas apenas uma única vez, isso sugere que ainda existem espécies não detectadas na comunidade.
+
+Por essa razão, o estimador de Chao tende a aumentar suas estimativas à medida que aumenta a proporção de espécies raras observadas.
+
+## Estimadores Jackknife
+
+Os estimadores Jackknife utilizam a ocorrência de espécies raras entre as amostras para inferir riqueza adicional. Diferentemente do estimador de Chao, que utiliza abundâncias, os métodos Jackknife são frequentemente aplicados a dados de incidência, considerando apenas presença e ausência das espécies nas unidades amostrais.
+
+Esses métodos são amplamente utilizados em inventários ecológicos e frequentemente complementam as estimativas produzidas por outros estimadores de riqueza.
+
+# Conexão com a Conservação
+
+Inventários biológicos frequentemente subsidiam decisões relacionadas à conservação da biodiversidade. Entretanto, decisões baseadas apenas na riqueza observada podem subestimar a importância de áreas que abrigam espécies raras ou difíceis de detectar (como as regiões tropicais). Estimadores de riqueza fornecem uma ferramenta importante para reduzir esse viés e melhorar a interpretação dos levantamentos ecológicos.
+
+# Atividade prática
+
+Descrição da atividade.
+
+::: callout-tip
+## Antes de começar
+
+Verifique se você tem os pacotes necessários instalados.
+:::
+
+# Preparando o ambiente no R
+
+```{r}
+library(tidyverse)
+```
+
+# Importando os dados
+
+```{r}
+# dados <- read_csv("caminho/para/os/dados.csv")
+```
+
+# Organização dos dados
+
+```{r}
+# exemplo de manipulação
+```
+
+# Visualização
+
+```{r}
+# exemplo de gráfico
+```
+
+# Exercícios
+
+1.  Questão 1.
+2.  Questão 2.
+3.  Questão 3.
+
+::: callout-important
+## Desafio
+
+Inclua aqui uma tarefa extra para os alunos.
+:::
+
+# Síntese
+
+\*\*A biodiversidade observada representa apenas uma parte da biodiversidade existente; estimadores de riqueza buscam inferir a parcela que permaneceu invisível durante a amostragem.\*\*
+
+### Ponte para a próxima aula
+
+Estimadores de riqueza assumem que algumas espécies permanecem não observadas devido à limitação do esforço amostral. Entretanto, outra possibilidade é que determinadas espécies sejam intrinsecamente mais difíceis de detectar (mais raras, não cantam, estão ativas em períodos que não estamos fazendo amostragem...).
+
+Na próxima aula discutiremos o conceito de detectabilidade e veremos como falsas ausências podem influenciar nossa interpretação dos dados ecológicos.
+
+::: needs-footer
+NEEDS/UFSCar — Material didático em constante desenvolvimento.
+:::

@@ -141,9 +141,11 @@ Sendo assim, a rarefação permite comparar comunidades utilizando o mesmo esfor
 
 > Quantas espécies ainda não observamos?
 
-Na próxima aula veremos como estimadores de riqueza podem ser utilizados para inferir o número de espécies não detectadas durante a amostragem.
+**Comparações ecológicas só são justas quando levam em consideração diferenças no esforço amostral empregado em cada levantamento.**
 
-Síntese da aula de hoje: **Comparações ecológicas só são justas quando levam em consideração diferenças no esforço amostral empregado em cada levantamento.**
+### Ponte para a próxima aula
+
+Na próxima aula veremos como estimadores de riqueza podem ser utilizados para inferir o número de espécies não detectadas durante a amostragem.
 
 ::: needs-footer
 NEEDS/UFSCar — Material didático em constante desenvolvimento.

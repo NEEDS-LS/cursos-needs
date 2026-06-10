@@ -17,6 +17,10 @@ execute:
 
 ![](../../../assets/logos/horizontal/NEEDS_horizontal_header.png){.needs-logo}
 
+# Resumo
+
+Escreva aqui o resumo da aula
+
 # Objetivos da aula
 
 Ao final desta aula, você deverá ser capaz de:
@@ -35,6 +39,10 @@ Escrever aqui os principaisa conceitos a serem trabalhados em aula.
 # Contextualização
 
 Texto introdutório da aula.
+
+# Conexão com a Conservação 
+
+Escreva aqui
 
 # Atividade prática
 
