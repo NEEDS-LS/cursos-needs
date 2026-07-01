@@ -95,35 +95,332 @@ Verifique se você tem os pacotes necessários instalados.
 
 # Preparando o ambiente no R
 
-`{r} library(tidyverse)}`
+```{r}
+library(tidyverse)
+library(readxl)
+library(janitor)
+```
 
-# Importando os dados
+# Importando e arrumando os dados
 
-`{r} # dados <- read_csv("caminho/para/os/dados.csv")}`
+```{r}
 
-# Organização dos dados
+pasta<-"C:/Users/user/Downloads/tabelas_tidy"
+```
 
-`{r} # exemplo de manipulação}`
+```{r}
+arquivos <- list.files(
+  path = pasta,
+  pattern = "\\.xlsx$",
+  full.names = TRUE
+)
 
-# Visualização
+arquivos
+```
 
-`{r} # exemplo de gráfico}`
+Veja que o nome dos arquivos difere. O grupo 4 usou Aula 03, enquanto os demais usaram 02.
 
-# Exercícios
+Agora iremos juntar todos os dados e dar uma olhada neles
 
-1.  Questão 1.
-2.  Questão 2.
-3.  Questão 3.
+```{r, eval=FALSE}
+dados <- arquivos |>
+  purrr::set_names(basename(arquivos)) |>
+  purrr::map_dfr(
+    ~ readxl::read_excel(.x),
+    .id = "arquivo_origem"
+  )
 
-::: callout-important
-## Desafio
+#glimpse(dados)
+```
 
-Inclua aqui uma tarefa extra para os alunos.
-:::
+**P01**: Verifique esse erro e veja qual a potencial origem dele.
+
+Uma das possíveis soluções é transformar tudo para texto
+
+```{r nesse}
+dados <- arquivos |>
+  purrr::set_names(basename(arquivos)) |>
+  purrr::map_dfr(
+    ~ readxl::read_excel(.x, col_types = "text"),
+    .id = "arquivo_origem"
+  ) |>
+  clean_names()
+
+```
+
+E voltar a abundância para número
+
+```{r}
+dados <- dados |>
+  mutate(
+    abundancia = as.numeric(abundancia)
+  )
+```
+
+Vamos manter uma tabela com dados brutos e dar uma olhada nos dados
+
+```{r}
+dados_brutos<-dados
+glimpse(dados)
+```
+
+Ainda temos o problema nos grupos. Vamos deixar todos iguais ao grupo 4. Primeiro deixamos o 4 igual aos demais, depois todos com G na frente
+
+```{r}
+dados <- dados |>
+  mutate(
+    grupo = str_remove(grupo, "^G"),
+    grupo = paste0("G", grupo)
+  )
+```
+
+Veja que ainda não acertou! Olhem a importância do controle na entrada de dados!
+
+```{r}
+#glimpse(dados)
+unique(dados$grupo)
+```
+
+```{r}
+dados <- dados |>
+  mutate(
+    grupo = str_remove(grupo, "^G"),
+    grupo = as.numeric(grupo),
+    grupo = paste0("G", grupo)
+  )
+```
+
+E vamos ver se deu certo.
+
+```{r}
+unique(dados$grupo)
+```
+
+Imagina agora se temos uma nova coleta...
+
+Agora vamos ver quantas espécies temos! Acho que temos problemas!
+
+```{r}
+dados |>
+  distinct(especie_padronizada) |>
+  arrange(especie_padronizada)
+```
+
+**P02:** Quantas potenciais "espécies" temos nesse momento no banco de dados?
+
+Existem nomes repetidos? Parece que temos problemas né?
+
+```{r}
+dados |>
+  count(especie_padronizada, sort = TRUE)
+```
+
+Como os grupos padronizaram as identificações realizadas em campo?
+
+```{r}
+dados |>
+  select(nome_original, especie_padronizada) |>
+  distinct() |>
+  arrange(especie_padronizada)
+
+```
+
+```{r}
+dados |>
+  count(especie_padronizada, nome_original, sort = TRUE)
+```
+
+Agora avalie esse conjunto de dados e veja onde podem existir erros de identificação.
+
+Talvez fique melhor na tabela abaixo
+
+```{r}
+dados |>
+  group_by(especie_padronizada) |>
+  summarise(
+    nomes_utilizados = paste(unique(nome_original), collapse = ", ")
+  )
+```
+
+Existem espaços em branco?
+
+```{r}
+dados |>
+  summarise(
+    across(
+      where(is.character),
+      ~sum(. != stringr::str_trim(.))
+    )
+  )
+```
+
+Para limpar os espaços (que provavelmente já foram limpos nas manipulações anteriores)
+
+```{r}
+dados <- dados |>
+  mutate(
+    across(
+      where(is.character),
+      stringr::str_trim
+    )
+  )
+```
+
+Existem espécies diferentes do guia?
+
+Primeiro vamos ver as espécies do guia:
+
+```{r}
+guia <- c(
+  "Milho verde",
+  "Dori yogurte",
+  "Melancia azedinha",
+  "Azedinha melancia",
+  "Sete belo",
+  "Santafe abacaxi",
+  "Santafe uva",
+  "Santafe laranja",
+  "Santafe cereja",
+  "Santafe morango",
+  "Chita verde",
+  "Chita rosa",
+  "Chita roxa",
+  "Freegells pessego",
+  "Hortela extra"
+)
+```
+
+Agora vamos ver se temos espécies diferentes
+
+```{r}
+dados |>
+  filter(
+    !especie_padronizada %in% guia
+  )
+```
+
+**P03**: Indique quais foram as espécies com problemas de nomenclatura e qual a origem destes problemas.
+
+Temos alguns problemas na identificação das espécies. E alguns deles são solucionáveis. Outros nem tanto...
+
+```{r}
+dados_corrigidos <- dados |>
+  mutate(
+    especie_final = case_when(
+      especie_padronizada == "Melacia azedinha" ~ "Melancia azedinha",
+      especie_padronizada == "Uva roxa" ~ "Chita roxa",
+      especie_padronizada == "Dori yugurte" ~ "Dori yogurte",
+      TRUE ~ especie_padronizada
+    )
+  )
+```
+
+Só que existem registros que não temos como saber com precisão o que são. Esses registros precisamos descartá-los! Infelizmente!
+
+```{r}
+dados_corrigidos <- dados_corrigidos |>
+  filter(!is.na(especie_final))
+```
+
+Tem a questão sem refinamento taxonômico
+
+```{r}
+guia_expandido <- c(guia, "Chita abacaxi")
+
+# Verificar registros problemáticos antes de descartar
+dados_corrigidos |>
+  filter(
+    is.na(especie_final) |
+      !especie_final %in% guia_expandido |
+      str_detect(str_to_lower(coalesce(obs, "")), "mesmo nome|mesma espécie|mesmo sabor")
+  )
+```
+
+Alguns erros podem ser corrigidos com segurança; outros comprometem a interpretação biológica do registro e precisam ser removidos ou mantidos apenas como informação qualitativa. Dados descartados representam perda de esforço amostral.
+
+Foi o grupo 6, então uma opção conservadora é excluir os dados do grupo 6 como um todo, além das espécies que não tem identificação
+
+```{r}
+dados_limpo <- dados_corrigidos |>
+  filter(!is.na(especie_final)) |>
+  filter(grupo != "G6") |>
+  mutate(
+    across(where(is.character), str_trim)
+  )
+```
+
+Agora precisamos gerar um output VERIFICAR
+
+```{r}
+# Verificar se ainda existem espécies fora do guia expandido
+dados_limpo |>
+  filter(!especie_final %in% guia_expandido) |>
+  count(especie_final, sort = TRUE)
+
+dados_limpo |>
+  count(grupo, amostra)
+
+dados_limpo |>
+  count(especie_final, sort = TRUE)
+```
+
+Apos todas as limpezas, os dados do grupo 4 ainda são pouco confiáveis, e é melhor cortarmos da base de dados.
+
+```{r}
+# Último corte: remover grupo 4 por inconsistência nos dados
+dados_limpo_final <- dados_limpo |>
+  filter(grupo != "G4")
+```
+
+Verifica
+
+```{r}
+dados_limpo_final |>
+  count(grupo, amostra)
+
+dados_limpo_final |>
+  count(especie_final, sort = TRUE)
+```
+
+Salvando
+
+```{r, eval=FALSE}
+write_csv(
+  dados_limpo_final,
+  "../dados/banco_dados_tidy_limpo.csv"
+)
+```
+
+Gerando a matriz de comunidade
+
+```{r}
+matriz_comunidade <- dados_limpo_final |>
+  group_by(grupo, amostra, especie_final) |>
+  summarise(
+    abundancia = sum(abundancia),
+    .groups = "drop"
+  ) |>
+  pivot_wider(
+    names_from = especie_final,
+    values_from = abundancia,
+    values_fill = 0
+  )
+
+matriz_comunidade
+```
+
+```{r, eval=FALSE}
+write_csv(
+  matriz_comunidade,
+  "../dados/matriz_comunidade.csv"
+)
+```
 
 # Síntese
 
 A utilidade de um conjunto de dados depende não apenas da informação coletada, mas também da forma como essa informação é organizada e mantida. Dados padronizados permitem integrar observações, reproduzir análises e extrair conhecimento de forma mais eficiente. E isso é fundamental tanto para a reutilização dos dados, quanto para você quando voltar nos teus próprios dados daqui a 6 meses.
+
+Em resumo, essa atividade reproduziu, em escala reduzida, exatamente o fluxo de um inventário biológico real. Vocês foram ao **campo** (amostragem), passaram pelo **laboratório** (identificação e padronização) e agora estão chegando ao **banco de dados** (integração e controle de qualidade). Nas próximas aulas veremos algumas ferramentas estatísticas que nos auxiliarão a analisar os dados.
 
 ::: needs-footer
 NEEDS/UFSCar — Material didático em desenvolvimento.

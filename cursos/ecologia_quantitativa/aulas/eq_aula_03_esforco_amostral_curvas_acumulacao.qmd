@@ -84,13 +84,38 @@ library(tidyverse)
 # Importando os dados
 
 ```{r}
-# dados <- read_csv("caminho/para/os/dados.csv")
+dados <- read_csv("../dados/banco_dados_tidy_limpo.csv")
+glimpse(dados)
 ```
 
-# Organização dos dados
+# Explorando os dados
+
+Quantas espécies encontramos?
 
 ```{r}
-# exemplo de manipulação
+dados |>
+  distinct(especie_final)
+```
+
+```{r}
+dados |>
+  summarise(
+    riqueza = n_distinct(especie_final)
+  )
+```
+
+**P01:** Qual a riqueza observada?
+
+Quantas amostras temos?
+
+```{r}
+dados |>
+  distinct(grupo, amostra)
+```
+
+```{r}
+dados |>
+  count(grupo)
 ```
 
 # Visualização

@@ -40,7 +40,7 @@ Escrever aqui os principaisa conceitos a serem trabalhados em aula.
 
 Texto introdutório da aula.
 
-# Conexão com a Conservação 
+# Conexão com a Conservação
 
 Escreva aqui
 
@@ -93,6 +93,10 @@ Inclua aqui uma tarefa extra para os alunos.
 # Síntese
 
 Retome os principais aprendizados da aula.
+
+### Ponte para a próxima aula
+
+Escrever aqui a ponte
 
 ::: needs-footer
 NEEDS/UFSCar — Material didático em constante desenvolvimento.
